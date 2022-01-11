@@ -1,10 +1,28 @@
 #include <iostream>
 #include "SingleLinkedList.hpp"
 #include "Queue.hpp"
+#include "Tree.hpp"
 
 
 using namespace std;
 int main() {
+
+	BinaryTree<int> btree;
+	btree.add(4);
+	btree.add(2);
+	btree.add(5);
+	auto pre = btree.preTraverse();
+	for (int n : pre) {
+		cout << n << endl;
+	}
+	auto mid = btree.midTraverse();
+	for (int n : mid) {
+		cout << n << endl;
+	}
+	auto post = btree.postTraverse();
+	for (int n : post) {
+		cout << n << endl;
+	}
 	/*SingleLinkedList<int> list;
 	list.isEmpty();
 	list.add(2);
@@ -20,7 +38,8 @@ int main() {
 	{
 		cout << list[i] << endl;
 	}*/
-	Queue<int> queue;
+
+	/*Queue<int> queue;
 	cout << queue.getCapacity() << endl;
 	cout << queue.getLength() << endl;
 	queue.push_back(1);
@@ -29,5 +48,5 @@ int main() {
 	cout << queue.getLength() << endl;
 	queue.pop_head();
 	cout << queue.getLength() << endl;
-	return 0;
+	return 0;*/
 }

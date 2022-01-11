@@ -28,6 +28,7 @@ public:
 	T& operator [](size_t index);
 	//·´×ªÁ´±í
 	void reverse();
+	~SingleLinkedList();
 };
 
 template<typename T>
@@ -66,7 +67,12 @@ void SingleLinkedList<T>::remove(size_t index) {
 		pre = cur;
 		cur = cur->next;
 	}
-	pre->next = cur->next;
+	if (pre == nullptr) {
+		head = head->next;
+	}
+	else {
+		pre->next = cur->next;
+	}
 	delete cur;
 	this->size--;
 }
@@ -113,6 +119,18 @@ void SingleLinkedList<T>::reverse() {
 		else {
 			this->head = pre;
 			return;
+		}
+	}
+}
+template<typename T>
+inline SingleLinkedList<T>::~SingleLinkedList()
+{
+	if (head != nullptr) {
+		Node<T>* pre = nullptr;
+		Node<T>* cur = head;
+		while ((pre = cur) != nullptr) {
+			cur = cur->next;
+			delete pre;
 		}
 	}
 }

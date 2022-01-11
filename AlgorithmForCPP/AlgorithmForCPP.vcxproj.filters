@@ -26,5 +26,8 @@
     <ClInclude Include="Queue.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Tree.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

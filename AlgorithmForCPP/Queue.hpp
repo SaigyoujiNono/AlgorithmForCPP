@@ -21,6 +21,8 @@ public:
 	Queue();
 	//设定容量
 	Queue(size_t capacity);
+	//析构函数
+	~Queue();
 	//队列当前长度
 	size_t getLength();
 	//当前容量
@@ -41,6 +43,12 @@ inline Queue<T>::Queue():length(0), capacity(10), head(0), rear(0), queue(new T[
 
 template<typename T>
 inline Queue<T>::Queue(size_t capacity):length(0),capacity(capacity), head(0), rear(0), queue(new T[capacity]{ 0 }){}
+
+template<typename T>
+inline Queue<T>::~Queue()
+{
+	delete[]queue;
+}
 
 template<typename T>
 inline size_t Queue<T>::getLength()
