@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Queue.hpp" />
+    <ClInclude Include="SegmentTree.hpp" />
     <ClInclude Include="SingleLinkedList.hpp" />
     <ClInclude Include="Tree.hpp" />
   </ItemGroup>
